@@ -9,23 +9,47 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 @font-face {
-  font-family: LordOfTheRings; src: url("Middleearth-ao6m.ttf");}
-@font-face { font-family: LordOfTheRings; font-weight: bold; src: url('Middleearth-ao6m.ttf');}
+  font-family: LordOfTheRings; src: url("./assets/Middleearth-ao6m.ttf");}
+@font-face { font-family: LordOfTheRings; font-weight: bold; src: url('./assets/Middleearth-ao6m.ttf');}
+
+/* Global styles  */
+
+* { 
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 .wrapper {
-  width: 80%;
-  max-width: 100%;
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
 }
 
 h1 {
   font-family: LordOfTheRings;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 5rem;
   text-transform: uppercase;
-  margin:0;
-  text-align: center;
-  padding-top: 50px;
 }
 
 h3 {
@@ -34,125 +58,168 @@ h3 {
 
 .header-ring {
   color: goldenrod;
+  font-size: 6rem;
+  padding-bottom: 25px;
 }
 
 header {
-  background-image: url(lotr_background.jpg);
+  background-image: url(./assets/lotr_background2.jpg);
   background-size: cover;
-  height: 100vh;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+}
+
+.header-content {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  min-height: 50vh;
+  /* background-color: #152f2c; */
+  background-color: #bcbcdb;
+}
+
+.menu-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 35px;
 }
 
 select {
   font-family: LordOfTheRings;
   color: black;
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: bold;
-  width: 550px;
-  padding: 20px;
+  width: 350px;
+  padding: 10px;
+  margin-bottom: 15px;
   box-sizing: border-box;
-  border: 2px solid #193339;
   border-radius: 25px;
-  background-color: #3a6d78;
+  cursor: pointer;
+  border: solid 3px white;
 }
 
-.menu-holder {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 200px 100px 200px 100px;
+select:hover,
+select:focus {
+  border: solid 3px goldenrod;
 }
 
-.quote-container {
-  background-color: #3a6d78;
-  color:black;
+.randomizer {
+  border-radius: 10px;
+  border: solid 3px white;
+  background-color: white;
   font-family: LordOfTheRings;
-  font-size: 25px;
+  font-size: 2rem;
+  padding: 10px;
+
+}
+
+.randomizer:hover,
+.randomizer:focus {
+  border: solid 3px goldenrod;
+  cursor: pointer;
+
+}
+
+.results-wrapper {
+  color: black;
+  font-family: LordOfTheRings;
+  font-size: 2.5rem;
   display: flex;
-  justify-content: center;
-  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0 25px 0;
 }
 
-.quote-holder {
-  max-width: 80%;
-  padding: 30px;
+.results-text-wrapper {
+  max-width: 60%;
 }
 
+.photo-container {
+  max-width: 40%;
+  margin-right: 40px;
+}
+
+.photo-container img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.movie-title-container {
+  font-family: LordOfTheRings;
+  font-size: 2rem;
+  padding-top: 20px
+}
 
 footer {
   font-family: LordOfTheRings;
   font-size: 25px;
   background-color: black;
-  color: #3a6d78;
-  display: flex;
-  justify-content: center;
+  color: goldenrod;
+  text-align: center;
+  padding: 25px 0;
+}
+
+footer a:hover,
+footer a:focus {
+  color:white;
+
 }
 
 
-@media (max-width: 940px) {
-
-  header { 
-    background-image: url(lotr_background.jpg);
-    background-size: cover;
-    max-width: 100%;
-    height: auto;
-  }
-
-  h1 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  header {
-    background-image: url(lotr_background.jpg);
-    background-position: center;
-    max-width: 100%;
-    min-height: auto;
-  }
-
-  h1 {
-    font-size: 35px;
+@media (max-width: 985px) {
+  .results-wrapper {
+    justify-content: center;
   }
 
   .quote-container {
-    font-size: 30px;
+    padding-top: 20px;
+
   }
 
-  footer{
-    margin: 0 auto;
-    line-height: 2;
+}
+ 
+@media (max-width: 768px) {
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  .photo-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
   }
 
 }
 
 @media (max-width: 480px) {
-  
+
   header {
-    background-image: url(lotr_background.jpg);
-    background-position: center;
-    max-width: 100%;
-    min-height: auto;
+    background-image: none;
+    background-color: goldenrod;
+
+  }
+  
+
+  .header-ring {
+    color: black;
+
   }
 
-  h1 {
-    font-size: 22px;
-    color: white;
-  }
-
-  select {
-    font-size: 20px;
-    font-weight: bold;
-    width: 550px;
-    padding: 20px;
-  }
 
   .quote-container {
     font-size: 20px;
   }
 
   footer p {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
 }
