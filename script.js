@@ -9,7 +9,6 @@ lotrApp.allIds = ["5cd99d4bde30eff6ebccfea0","5cd99d4bde30eff6ebccfc15", "5cd99d
 
 lotrApp.allPhotos = ["./assets/gandalf.jpeg", "./assets/frodo.jpeg", "./assets/samwise.jpeg", "./assets/aragorn.jpeg", "./assets/legolas.png", "./assets/gimli.jpg", "./assets/merry.jpg", "./assets/pippin.jpg", "./assets/boromir.jpg"]
 
-
 // lotrApp.allMovieTitles = ["5cd95395de30eff6ebccde5c", "5cd95395de30eff6ebccde5b", "5cd95395de30eff6ebccde5d"]
 
 // API url 
@@ -41,7 +40,6 @@ lotrApp.getQuotes = () => {
     });
 };
 
-
 // create a method to get the selected option value from the drop down menu
 
 lotrApp.getValue = () => {
@@ -67,12 +65,9 @@ lotrApp.getValue = () => {
 // create a method to generate a random quote
 lotrApp.randomQuoteGenerator = () => {
 
-  
     $("#randomizer").on("click", function () {
 
         const randomNumber = Math.floor(Math.random() * 9);
-
-        console.log(randomNumber)
 
         lotrApp.id = lotrApp.allIds[randomNumber]
         lotrApp.photo = lotrApp.allPhotos[randomNumber]
@@ -82,10 +77,7 @@ lotrApp.randomQuoteGenerator = () => {
         lotrApp.getQuotes();
 
     })   
-
-
 }
-
 
 // display results to the page 
 
@@ -93,13 +85,9 @@ lotrApp.displayQuotes = (quote) => {
 
     let selectedQuote = [Math.floor(Math.random() * quote.docs.length)];
 
-    console.log(selectedQuote)
-
     //generate random quote from array values. 
 
     let whichMovie = quote.docs[selectedQuote].movie;
-
-    console.log(whichMovie)
 
     if (whichMovie === "5cd95395de30eff6ebccde5d") {
         let movie = `<p>The Fellowship of the Ring</p> `
@@ -127,7 +115,7 @@ lotrApp.displayQuotes = (quote) => {
         <h3>"${quote.docs[selectedQuote].dialog}"</h3>   
     `
     const photoToAppend = `
-        <img src=${lotrApp.photo} alt="">
+        <img src=${lotrApp.photo} alt="Lord of the Rings character">
     `
 
     $(".quote-container").append(htmlToAppend)
@@ -136,8 +124,6 @@ lotrApp.displayQuotes = (quote) => {
     return quote.docs[selectedQuote]
 };
 
-
-   
 // create  app initialization method 
 
 lotrApp.init = function () {
