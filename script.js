@@ -3,9 +3,9 @@ const lotrApp = {};
 
 // assign an array value to each character id 
 
-// lotrApp.id = "5cd99d4bde30eff6ebccfbe6";
-
 lotrApp.allIds = ["5cd99d4bde30eff6ebccfea0","5cd99d4bde30eff6ebccfc15", "5cd99d4bde30eff6ebccfd0d", "5cd99d4bde30eff6ebccfbe6", "5cd99d4bde30eff6ebccfd81", "5cd99d4bde30eff6ebccfd23", "5cd99d4bde30eff6ebccfe2e", "5cd99d4bde30eff6ebccfc7c", "5cd99d4bde30eff6ebccfc57"]
+
+lotrApp.allNames = ["Gandalf", "Frodo Baggins", "Samwise Gamgee", "Aragorn", "Legolas", "Gimli", "Peregrin Took", "Meriadoc Brandybuck", "Boromir"]
 
 lotrApp.allPhotos = ["./assets/gandalf.jpeg", "./assets/frodo.jpeg", "./assets/samwise.jpeg", "./assets/aragorn.jpeg", "./assets/legolas.png", "./assets/gimli.jpg", "./assets/merry.jpg", "./assets/pippin.jpg", "./assets/boromir.jpg"]
 
@@ -53,6 +53,7 @@ lotrApp.getValue = () => {
         const selection = $("option:selected").val()
 
         lotrApp.id = lotrApp.allIds[selection]
+        lotrApp.name = lotrApp.allNames[selection]
         lotrApp.photo = lotrApp.allPhotos[selection]
 
         lotrApp.url = `https://the-one-api.dev/v2/character/${lotrApp.id}/quote`;
@@ -70,6 +71,7 @@ lotrApp.randomQuoteGenerator = () => {
         const randomNumber = Math.floor(Math.random() * 9);
 
         lotrApp.id = lotrApp.allIds[randomNumber]
+        lotrApp.name = lotrApp.allNames[randomNumber]
         lotrApp.photo = lotrApp.allPhotos[randomNumber]
 
         lotrApp.url = `https://the-one-api.dev/v2/character/${lotrApp.id}/quote`;
@@ -79,9 +81,20 @@ lotrApp.randomQuoteGenerator = () => {
     })   
 }
 
+// create a method to shuffle the displayed quote by chosen character 
+
+lotrApp.shuffleQuote = () => {
+    $("#shuffle").on("click", function () {
+        lotrApp.getQuotes();
+
+    })    
+}
+
 // display results to the page 
 
 lotrApp.displayQuotes = (quote) => {
+    
+    $(".shuffle").show()
 
     let selectedQuote = [Math.floor(Math.random() * quote.docs.length)];
 
@@ -112,7 +125,8 @@ lotrApp.displayQuotes = (quote) => {
     // create the html to display quotes to the page
 
     const htmlToAppend = `
-        <h3>"${quote.docs[selectedQuote].dialog}"</h3>   
+        <h3>"${quote.docs[selectedQuote].dialog}"</h3>  
+        <h4>~ ${lotrApp.name}</h4>
     `
     const photoToAppend = `
         <img src=${lotrApp.photo} alt="Lord of the Rings character">
@@ -124,11 +138,17 @@ lotrApp.displayQuotes = (quote) => {
     return quote.docs[selectedQuote]
 };
 
+
+
+
+
+
 // create  app initialization method 
 
 lotrApp.init = function () {
     lotrApp.getValue();
     lotrApp.randomQuoteGenerator();
+    lotrApp.shuffleQuote();
 };
 
 // create document ready

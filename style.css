@@ -56,6 +56,12 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  margin: 15px 15px;
+
+
+}
+
 .header-ring {
   color: goldenrod;
   font-size: 6rem;
@@ -79,15 +85,15 @@ header {
 
 main {
   min-height: 50vh;
-  /* background-color: #152f2c; */
   background-color: #bcbcdb;
 }
 
 .menu-holder {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-top: 35px;
+  margin-bottom: 15px;
 }
 
 select {
@@ -97,32 +103,32 @@ select {
   font-weight: bold;
   width: 350px;
   padding: 10px;
-  margin-bottom: 15px;
   box-sizing: border-box;
   cursor: pointer;
   border: solid 3px white;
+  box-shadow: 5px 5px #111111 ;
 }
 
 select:hover,
 select:focus {
   border: solid 3px goldenrod;
+  box-shadow: none;
 }
 
 .randomizer {
-  border-radius: 10px;
   border: solid 3px white;
   background-color: white;
   font-family: LordOfTheRings;
   font-size: 2rem;
-  padding: 10px;
-
+  padding: 0 10px;
+  box-shadow: 5px 5px #111111;
 }
 
 .randomizer:hover,
 .randomizer:focus {
   border: solid 3px goldenrod;
   cursor: pointer;
-
+  box-shadow: none;
 }
 
 .results-wrapper {
@@ -156,6 +162,24 @@ select:focus {
   padding-top: 20px
 }
 
+.shuffle button {
+  display: none;
+  border: solid 3px white;
+  background-color: white;
+  font-family: LordOfTheRings;
+  font-size: 2rem;
+  padding: 5px;
+  box-shadow: 5px 5px #111111;
+  margin-top: 35px;
+}
+
+.shuffle button:hover,
+.shuffle button:focus {
+  border: solid 3px goldenrod;
+  cursor: pointer;
+  box-shadow: none;
+}
+
 footer {
   font-family: LordOfTheRings;
   font-size: 25px;
@@ -173,11 +197,14 @@ footer a:focus {
 
 @media (max-width: 985px) {
 
+  .wrapper {
+    max-width: 850px;
+  }
+
   h1 {
     text-align: center; 
 
   }
-
 
   .results-wrapper {
     justify-content: center;
@@ -195,6 +222,17 @@ footer a:focus {
     font-size: 4rem;
   }
 
+  .menu-holder {
+    justify-content: center;
+  
+  }
+  
+  select{
+    margin-bottom: 25px;
+
+  }
+
+
   .photo-container img {
     width: 200px;
     height: 200px;
@@ -211,7 +249,6 @@ footer a:focus {
     min-height: 0;
 
   }
-  
 
   .header-content {
     min-height: 0;
@@ -222,7 +259,6 @@ footer a:focus {
     color: black;
 
   }
-
 
   .quote-container {
     font-size: 20px;
