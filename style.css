@@ -264,6 +264,11 @@ footer a:focus {
     font-size: 20px;
   }
 
+  .randomizer {
+    padding: 0;
+
+
+  }
   footer p {
     font-size: 2rem;
   }
