@@ -198,11 +198,21 @@ footer a:focus {
 @media (max-width: 985px) {
 
   .wrapper {
-    max-width: 850px;
+    max-width: 80%;
   }
 
   h1 {
     text-align: center; 
+
+  }
+
+  .menu-holder {
+    justify-content: center;
+
+  }
+
+  select{
+    margin-bottom: 25px;
 
   }
 
@@ -221,18 +231,7 @@ footer a:focus {
   h1 {
     font-size: 4rem;
   }
-
-  .menu-holder {
-    justify-content: center;
   
-  }
-  
-  select{
-    margin-bottom: 25px;
-
-  }
-
-
   .photo-container img {
     width: 200px;
     height: 200px;
