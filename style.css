@@ -91,7 +91,7 @@ main {
 .menu-holder {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-top: 35px;
   margin-bottom: 15px;
 }
@@ -243,9 +243,15 @@ footer a:focus {
 @media (max-width: 480px) {
 
   header {
-    background-image: none;
-    background-color: goldenrod;
-    min-height: 0;
+    background-image: url("./assets/mobile-background.jpeg");
+    background-size: cover;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+
+  h1 {
+    color: white;
 
   }
 
@@ -255,19 +261,45 @@ footer a:focus {
   }
 
   .header-ring {
-    color: black;
+    display: none;
+    
+  }
 
+
+  main {
+    background-color: white;
+    min-height: 100vh;
+
+  }
+
+  select,
+  .randomizer,
+  .shuffle button {
+    border: 2px solid goldenrod;
+    box-shadow: none;
+
+  }
+        
+  .randomizer {
+    padding: 0;
+  
+  }
+
+  .results-wrapper {
+    width: 100%;
+
+  }
+ 
+  .photo-container {
+    max-width: 100%;
+    margin: 0;
   }
 
   .quote-container {
     font-size: 20px;
   }
 
-  .randomizer {
-    padding: 0;
 
-
-  }
   footer p {
     font-size: 2rem;
   }
