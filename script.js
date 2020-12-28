@@ -7,7 +7,7 @@ lotrApp.allIds = ["5cd99d4bde30eff6ebccfea0","5cd99d4bde30eff6ebccfc15", "5cd99d
 
 lotrApp.allNames = ["Gandalf", "Frodo Baggins", "Samwise Gamgee", "Aragorn", "Legolas", "Gimli", "Peregrin Took", "Meriadoc Brandybuck", "Boromir"]
 
-lotrApp.allPhotos = ["./assets/gandalf.jpeg", "./assets/frodo.jpeg", "./assets/samwise.jpeg", "./assets/aragorn.jpeg", "./assets/legolas.png", "./assets/gimli.jpg", "./assets/merry.jpg", "./assets/pippin.jpg", "./assets/boromir.jpg"]
+lotrApp.allPhotos = ["./assets/gandalf.jpeg", "./assets/frodo.jpeg", "./assets/samwise.jpeg", "./assets/aragorn.jpeg", "./assets/legolas.png", "./assets/gimli.jpg", "./assets/pippin.jpg", "./assets/merry.jpg", "./assets/boromir.jpg"]
 
 // lotrApp.allMovieTitles = ["5cd95395de30eff6ebccde5c", "5cd95395de30eff6ebccde5b", "5cd95395de30eff6ebccde5d"]
 
